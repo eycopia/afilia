@@ -1,0 +1,275 @@
+{% extends "stcc_red/base.html" %}
+{% block external %}
+<link  href="{{STATIC_URL}}css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css"/>
+<script src="{{STATIC_URL}}js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="{{STATIC_URL}}js/jquery.ui.datepicker-es.custom.min.js"></script>
+<script src="{{STATIC_URL}}js/jquery.validate.js"></script>
+<script src="{{STATIC_URL}}js/afiliado/frm_new_afiliado.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action='' id="formulario">
+	{% csrf_token %}
+	<input type="hidden" value="0" name="estado">
+    <h2 id="title_form">Ficha de Afiliación Nº {{cod_afiliado}}
+       <span class="rigth">Inscripción
+       	{{form.fecha_inscripcion.errors}}
+    	<input id="inscipcion" type="text" value="{{form.fecha_inscripcion.value|default_if_none:''}}" name="fecha_inscripcion" class="form_date">
+       </span>
+	</h2>
+{% if form.subject.errors %}
+    <ol>
+    {% for error in form.subject.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
+	<div id="formulario">
+		<!-- <div class="foto">
+			<img src="{{ STATIC_URL }}img/afiliado.png" alt="jorge copia">
+		</div> -->
+		<div>
+		<div class="frow2">
+			<label>Nombres</label>
+			<div>
+				{{form.nombres.errors}}
+				{{ form.nombres }}
+			</div>
+		</div>
+
+		<div class="frow2">
+			<label>Apellidos</label>
+			<div>
+				{{form.apellidos.errors}}
+				{{ form.apellidos }}
+			</div>
+		</div>
+
+		</div>
+
+		<div>
+		<div class="frow2">
+			<label>DNI</label>
+			<div>
+				{{form.dni.errors}}
+				{{ form.dni }}
+			</div>
+		</div>
+
+		<div class="frow2">
+			<label>Telefono</label>
+			<div>
+				{{form.telefono.errors}}
+				{{ form.telefono }}
+			</div>
+		</div>
+		</div>
+
+
+		<div>
+		<div class="frow2">
+			<label>Sexo</label>
+			<div>
+				{{form.sexo.errors}}
+			     <input type="radio" name="sexo" value='0'> Varon
+
+			     <input type="radio" name="sexo" value='1'> Mujer
+			</div>
+		</div>
+
+		<div class="frow2">
+			<label>ESSALUD</label>
+			<div>
+				{{form.essalud.errors}}
+				{{ form.essalud }}
+			</div>
+		</div>
+		</div>
+
+
+		<div>
+			<div class="frow2">
+					<label>Estado Civil</label>
+					<div>
+						{{form.estado_civil.errors}}
+						{{ form.estado_civil }}
+					</div>
+			</div>
+
+			<div class="frow2">
+					<label>C.U.S.P.P</label>
+					<div>
+						{{form.cuspp.errors}}
+						{{ form.cuspp }}
+					</div>
+			</div>
+		</div>
+
+		<div>
+			<h3 class="sect_form">Fecha y Lugar de Nacimiento</h3>
+			<div class="frow4">
+					<label>Fecha Nacimiento</label>
+					<div>
+						{{ form.fecha_nacimiento.errors}}
+		              <input type="text" value="{{form.fecha_nacimiento.value|default_if_none:''}}" name="fecha_nacimiento" class="form_date">
+
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Departamento</label>
+					<div>
+		            	<select class="departamento" rel='nc_prov' name="nace_dep">
+		            		<option value='n'>----------</option>
+						{% for lugar in departamento %}
+							<option value='{{lugar.departamento}}'>{{lugar.nombre}}</option>
+						{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Provincia</label>
+					<div>
+						<select class="provincia" id="nc_prov" name="nace_prov" rel='nc_dist'>
+	            		</select>
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Distrito</label>
+					<div>
+						{{form.lugar_nacimiento.errors}}
+		            	<select id="nc_dist" name="lugar_nacimiento">
+
+						</select>
+					</div>
+				</div>
+
+				<span clear="clear"></span>
+			</div>
+
+		<div>
+			<h3 class="sect_form"> Lugar de Residencia</h3>
+			<div class="frow4">
+					<label>Direccion</label>
+					<div>
+						{{ form.direccion.errors}}
+						{{ form.direccion }}
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Departamento</label>
+					<div>
+		            	<select class="departamento" rel='nc_prov2' name="res_dep">
+		            		<option value='n'>----------</option>
+						{% for lugar in departamento %}
+							<option value='{{lugar.departamento}}'>{{lugar.nombre}}</option>
+						{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Provincia</label>
+					<div>
+						<select class="provincia" id="nc_prov2" name="res_prov" rel='nc_dist2'>
+	            		</select>
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Distrito</label>
+					<div>
+						{{form.residencia.errors}}
+		            	<select id="nc_dist2" name="residencia">
+
+						</select>
+					</div>
+				</div>
+				<span clear="clear"></span>
+			</div>
+
+		<div>
+			<h3 class="sect_form">Conyugue e Hijos</h3>
+			<table id='familiares'>
+				<thead>
+					<th>Nombres y Apellidos</th>
+					<th>Edad</th>
+					<th>Sexo</th>
+					<th>Relación</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="large" name="fam0" value=""></td>
+						<td><input type="text" name="edad0" class="peq"></td>
+						<td>
+							<input type="radio" name="sex0" class="peq" value="0"> Varon
+							<input type="radio" name="sex0" class="peq" value="1"> Mujer
+						</td>
+						<td>
+							<select id="tipo_fam1" name="tipo_fam0">
+								{% for data in familiar %}
+								<option value="{{data.id}}">{{data.nombre}}</option>
+								{% endfor %}
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="hidden" name="num_fam" id="num_fam" value="0">
+			<div class="btn_add" id="add_reg">Agregar Otro Registro</div>
+		</div>
+		<span clear="clear"></span>
+		<div>
+			<h3 class="sect_form"> Otros Datos</h3>
+			<div class="frow4">
+					<label>Tipo de Vivienda</label>
+					<div>
+						{{form.tipo_vivienda.errors}}
+						{{ form.tipo_vivienda }}
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Categoria</label>
+					<div>
+						{{form.categoria.errors}}
+						{{ form.categoria }}
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Especialidad</label>
+					<div>
+						{{form.especialidad.errors}}
+						{{ form.especialidad }}
+					</div>
+				</div>
+
+				<div class="frow4">
+					<label>Instruccion</label>
+					<div>
+						{{form.instruccion.errors}}
+						{{ form.instruccion }}
+					</div>
+				</div>
+				<div class="frow4">
+					<label>Base</label>
+					<div>
+						{{form.base.errors}}
+						{{ form.base }}
+					</div>
+				</div>
+		</div>
+		<div class="cleartopup">
+		<div class="btn-form">
+			<input type="reset" value="Limpiar">
+			<input type="submit" value="Guardar">
+		</div>
+		</div>
+	</div>
+</form>
+{% endblock %}

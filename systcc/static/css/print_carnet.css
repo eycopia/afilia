@@ -1,0 +1,205 @@
+
+.corte {
+    border-bottom: 1px dashed grey;
+    border-left: 1px dashed grey;
+    border-top: 1px dashed grey;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.carnet {
+    cursor: default;
+    font-family: Helvetica;
+    height: 190px;
+    width: 625px;
+}
+
+.frontal {
+    /*background: url("/static/img/frontal.png") no-repeat scroll 0 0 transparent;*/
+    background: #CD0000;
+    background: -moz-linear-gradient(center top , #CD0000 0%, #6D0000  100%);
+    background: -ms-linear-gradient(top, #CD0000 0%,#6D0000  100%);
+    background: -o-linear-gradient(top, #CD0000 0%,#6D0000  100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CD0000), color-stop(100%,#6D0000 ));
+    background: -webkit-linear-gradient(top, #CD0000 0%,#6D0000  100%);
+    background: linear-gradient(top, #CD0000 0%,#6D0000  100%);
+    height: 184px;
+    margin-right: 1px;
+    width: 307px;
+    padding: 3px;
+}
+
+
+.title_carnet {
+    text-align: center;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 242 !important;
+    text-shadow: 1px 1px 2px grey;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+}
+/*Cuadro Blanco */
+.r_white {
+    background: url(/static/img/fondo_d.png);
+    border-radius: 1px;
+    height: 125px;
+    margin: 2px auto;
+    width: 98%;
+}
+/*foto */
+.foto {
+    width: 95px;
+    height: 95px;
+    border: 1px solid #dedede;
+    margin-left: 2px;
+    margin-top: 2px;
+    display: inline-block;
+}
+/*Info afiliado */
+
+.fizq {
+    display: inline-block;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 3px;
+}
+
+span.up_field {
+    font-size: 12px;
+    line-height: 0.6em;
+    font-weight: normal;
+}
+
+
+.fizq p {
+    margin: 0;
+    padding: 0px 0 3px 0px;
+    font-weight: bold;
+}
+/*************/
+
+.both {
+    clear: both;
+    display: block;
+}
+
+
+/*************/
+.ffooter {
+    font-size: 19px;
+    margin: 4px 9px 0px 25px;
+}
+
+/* Firma */
+.firma {
+    margin-top: 8px !important;
+    position: absolute;
+    margin-left: 40px;
+    width: 75px;
+}
+
+.firma2, .derf2 {
+    margin-top: -4px;
+    position: absolute;
+    width: 105px;
+}
+.derf2 {
+    left: 162px;
+}
+
+.f_atras {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 13px;
+}
+
+.firma, .firma2,.derf2{
+    border-top: 1px dashed grey;
+    text-align: center;
+    padding: 3px;
+}
+
+.atraz {
+    background: url("/static/img/tractor_c.png") no-repeat scroll 0 0 transparent;
+    font-size: 12px;
+    height: 190px;
+    width: 309px;
+    border-right: 1px dashed grey;
+}
+
+
+.logo_t {
+    display: inline-block;
+    position: absolute;
+}
+
+.leyend {
+    display: inline-block;
+    font-size: 9px;
+    font-style: italic;
+    line-height: 1.2em;
+    text-align: justify;
+    text-shadow: 1px 1px white;
+    width: 76%;
+    padding: 3px;
+}
+
+.aizq p {
+    margin: 3px 5px;
+}
+
+p img {
+    margin: -8px 44px 0 23px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+
+.cat{
+    color: darkred;
+    font-family: 'DejaVu Sans';
+    font-size: 15px;
+    font-weight: bold;
+    margin: -36px 0 0 157px;
+    position: absolute;
+    text-align: right !important;
+    text-transform: uppercase;
+    width: 66px;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+.img_left_firma {
+    float: left;
+    position: absolute;
+    top: -35px;
+    left: 19px;
+}
+.img_rigth_firma {
+    float: right;
+    position: absolute;
+    top: -35px;
+    right: -245px;
+}

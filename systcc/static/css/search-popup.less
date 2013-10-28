@@ -1,0 +1,126 @@
+/* variables */
+
+//width global
+@tam: 500px;
+
+.border-grey{
+	border: 1px solid grey;
+}
+
+.gradient-grises{
+	background: #F8F8F8;
+    background: -moz-linear-gradient(center top , #F8F8F8 0%, #D6D6D6  100%);
+    background: -ms-linear-gradient(top, #F8F8F8 0%,#D6D6D6  100%);
+    background: -o-linear-gradient(top, #F8F8F8 0%,#D6D6D6  100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F8F8F8), color-stop(100%,#D6D6D6 ));
+    background: -webkit-linear-gradient(top, #F8F8F8 0%,#D6D6D6  100%);
+    background: linear-gradient(top, #F8F8F8 0%,#D6D6D6  100%);
+}
+
+.gradient-azul{
+	background: #6298F1;
+    background: -moz-linear-gradient(top, #6298F1 0%, #2d6ad9 100%);
+    background: -ms-linear-gradient(top, #6298F1 0%,#2d6ad9 100%);
+    background: -o-linear-gradient(top, #6298F1 0%,#2d6ad9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6298F1), color-stop(100%,#2d6ad9));
+    background: -webkit-linear-gradient(top, #6298F1 0%,#2d6ad9 100%);
+    background: linear-gradient(top, #6298F1 0%,#2d6ad9 100%);
+    color: white;
+}
+
+.content-search{
+    margin:-7px;
+    width: @tam;
+}
+
+.clear{
+    display: block;
+    clear: both;
+}
+
+
+#search_obra{
+    width: @tam;
+    overflow: hidden;
+}
+form{
+    margin-bottom: 0px;
+}
+#text_search{
+	padding: 5px;
+	.border-grey;
+	background:ivory;
+	color: black;
+	font-weight: bold;
+    display: inline-block;
+    width: @tam - 78px;
+}
+
+input[type="submit"]{
+	width: 73px;
+	padding: 5px;
+	.border-grey;
+	.gradient-azul;
+}
+
+
+.step-links a {
+    padding: 5px 10px;
+    .gradient-azul;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.pagination {
+    .gradient-grises;
+    padding: 8px;
+    text-align: right;
+    .border-grey;
+}
+
+table{
+	border-spacing: 0;
+	cursor:pointer;
+    border-collapse: collapse;
+    width: @tam;
+}
+
+td {
+    color: #3c3c3c;
+    cursor: default;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+    text-shadow: 1px 1px white;
+   .border-grey;
+}
+
+.peq{
+	width: 25px;
+	text-align: center;
+}
+
+tbody tr:hover{
+	background: #E3EFFC;
+}
+
+thead {
+    .gradient-grises;
+    font-size: 12px;
+    color: #636363;
+
+}
+
+thead th{
+	padding: 8px;
+	.border-grey;
+}
+
+.even{
+	background: #f4f4f4;
+}
+
+.odd{
+	background: #efefef;
+}

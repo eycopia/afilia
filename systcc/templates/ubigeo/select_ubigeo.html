@@ -1,0 +1,5 @@
+<select name="departamento">
+{% for lugar in ubigeo %}
+<option value='{{lugar.departamento}}'>{{lugar.nombre}}</option>
+{% endfor %}
+</select>

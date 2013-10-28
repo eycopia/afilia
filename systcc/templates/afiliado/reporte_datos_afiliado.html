@@ -1,0 +1,28 @@
+{% extends "stcc_red/base.html" %}
+
+{% block content %}
+
+<table>
+	<thead>
+		<th>Cod</th>
+		<th>Nombres</th>
+		<th>DNI</th>
+		<th>Fecha Afil.</th>
+		<th>Firma</th>
+		<th>Huella</th>
+	</thead>
+	<tbody>
+		{% for data in afiliados %}
+		<tr>
+			<td>{{ data.id }}</td>
+			<td>{{data.nombres}} {{ data.apellidos}} </td>
+			<td>{{data.dni}}</td>
+			<td>{{data.fecha_inscripcion|date:"d/m/Y"}}</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		{% endfor %}
+	<tbody>
+</table>
+
+{% endblock %}

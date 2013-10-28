@@ -1,0 +1,99 @@
+{% extends "stcc_red/base.html" %}
+{% block external %}
+<!--<script src="{{STATIC_URL}}js/afiliado/frm_new_afiliado.js"></script> -->
+<style>
+.caja1 {
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: default;
+    display: inline-block;
+    height: 150px;
+    margin: 21px;
+    overflow: hidden;
+    padding: 10px;
+    width: 220px !important;
+    background: ghostwhite;
+    font-size: 14px;
+}
+
+h4.titulo {
+    background: maroon;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.caja1_add{
+    background: #E5E5E5;
+}
+
+.titulo_add{
+    background: dimgrey !important;
+}
+
+#barra {
+    background: none repeat scroll 0 0 dodgerblue;
+    border-radius: 5px 5px 5px 5px;
+    height: 12px;
+    margin-top: -40px;
+    overflow: hidden;
+    padding: 0 7px 20px 4px;
+    position: fixed;
+    right: 190px;
+    text-align: center;
+    width: 345px !important;
+    text-shadow: 1px 1px grey;
+    color: white;
+}
+
+#barra strong{
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+</style>
+<script type="text/javascript">
+$(function(){
+    var car_add = 0;
+    var carnets = '/carnets/print/?c=';
+    /* Agrega para impresión */
+    $('.btns').click(function(){
+        var operar = $(this).attr('rel');
+        carnets +=operar+'-';
+        $('#caja'+operar).detach();
+        car_add++;
+        $('#barra strong').text(car_add);
+    })
+
+    $('.btns2').click(function(){
+        location.href=carnets;
+    });
+})
+
+</script>
+{% endblock %}
+
+{% block content %}
+<h2 id="title_form"> Relación de carnet para imprimir</h2>
+<div id="barra">Carnets seleccionados: <strong>0</strong>
+    <span class="btns2">
+    <img src="{{STATIC_URL}}img/print_small.png" alt="imprimir"> Imprimir
+    </span>
+ </div>
+ <div class="cleartopup">
+{% for data in carnets %}
+    <div class="caja1" id="caja{{data.id}}">
+        <h4 class="titulo">{{data.id_pago.afiliado}}</h4 class="titulo">
+        <div><p><strong>Nº Boleta:</strong>{{data.afiliado.correlativo}}<br/>
+        <strong>Fecha:</strong> {{data.afiliado}}<br>
+        <strong>Modalidad:</strong> {{data.tipo_operacion}}
+        <p><br>
+        <center><div class="btns frow5" rel="{{data.id}}">Agregar</div></center>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+
+.corte {
+    border-bottom: 1px dashed grey;
+    border-left: 1px dashed grey;
+    border-top: 1px dashed grey;
+    margin-bottom: 4px;
+    padding: 0;
+    margin-top: 15px;
+}
+.carnet {
+    cursor: default;
+    font-family: Helvetica;
+    height: 190px;
+    width: 619px;
+}
+.frontal {
+    background: url("/static/img/frontal.png") no-repeat scroll 0 0 transparent;
+    height: 190px;
+    margin-right: 1px;
+    width: 307px;
+}
+.fizq {
+    font-size: 15px;
+    margin-left: 102px;
+    margin-top: 69px;
+}
+.fizq p {
+    margin: 14px 0 0;
+}
+.ffooter {
+    font-size: 19px;
+    margin: 11px 7px 0 28px;
+}
+.atraz {
+    background: url("/static/img/atraz.png") no-repeat scroll 0 0 transparent;
+    font-size: 12px;
+    height: 190px;
+    width: 309px;
+    border-right: 1px dashed grey;
+}
+.aizq p {
+    margin: 3px 5p
+}
+.aizq {
+    margin-top: 108px;
+}
+p img {
+    margin: -8px 44px 0 23px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+
+.cat{
+    color: darkred;
+    font-family: 'DejaVu Sans';
+    font-size: 15px;
+    font-weight: bold;
+    margin: -38px 0 0 157px;
+    position: absolute;
+    text-align: right !important;
+    text-transform: uppercase;
+    width: 66px;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}

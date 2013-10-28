@@ -1,0 +1,607 @@
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; background: #777;}
+
+::-moz-selection { background: DodgerBlue; color: #fff; text-shadow: none; }
+::selection { background: DodgerBlue; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+
+/* ===== Primary Styles ========================================================
+   Author: Jorge Luis Copia Silva
+   ========================================================================== */
+
+/* Div que contiene a todo la pagina */
+body
+{
+  background:#A9A9A9;
+}
+
+
+.ui-widget{
+  font-size: 14px !important;
+  box-shadow: 3px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.rigth{
+  float: right;
+}
+
+h1{
+  font-size: 1.6em;
+}
+
+h2{
+  font-size: 1.4em;
+}
+
+h3{
+  font-size: 1.2em;
+}
+
+
+
+.oculto{
+  display: none;
+}
+/*valido solo para formulario de inscripcion */
+#inscipcion{
+  padding: 2px;
+  width: 150px;
+}
+/***** Formularios ******/
+
+/* Formularios chicos*/
+.form_chico {
+    background: #fbfbfb;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    margin: 0 auto;
+    padding: 10px;
+    width: 456px;
+}
+/* Titulo Form*/
+#title_form {
+    background: none repeat scroll 0 0 DodgerBlue;
+    border-radius: 3px;
+    box-shadow: 2px 2px #DEDEDE;
+    color: white;
+    font-size: 1.3em;
+    margin: 5px 0;
+    padding: 4px 22px;
+}
+
+/* Table de famliares */
+table{
+    margin-top: 5px;
+    width: 100%;
+}
+
+table#familiares select {
+    width: 142px;
+}
+
+td {
+    border: 1px solid silver;
+    padding: 5px;
+}
+
+thead {
+    background: gold;
+    border: 1px solid gray;
+}
+
+.peq, input[type="radio"].peq {
+    width: 48px !important;
+    margin: 0px;
+}
+
+.td_peq, .td_peq input {
+    width: 100px !important;
+}
+
+.large {
+    width: 500px;
+}
+
+.medium {
+    width: 410px;
+    text-align: left;
+}
+
+/*boton para mas registros*/
+.btn_add{
+    background: dodgerBlue;
+    color: white;
+    cursor: pointer;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+/*separa partes de un grupo de campos*/
+.sect_form {
+    background: #D4D4D4;
+    border:1px dashed BlanchedAlmond;
+    font-size: 1.1em;
+    margin-top: 30px !important;
+    padding: 0 5px;
+}
+/*botones */
+.btn-form {
+    text-align: center;
+    padding: 5px;
+}
+
+
+.btn-form input {
+    background: dodgerBlue;
+    color: white;
+    padding: 7px 18px;
+    margin-left: 20px;
+    border: 1px solid silver;
+    box-shadow: 1px 1px silver;
+    border-radius: 3px;
+}
+
+.btn-form input:hover {
+    background: red;
+}
+
+/*Foto afiliado */
+.foto {
+    border: 1px solid;
+    box-shadow: 2px 2px #DEDEDE;
+    height: 202px;
+    margin-right: 29px;
+    margin-top: 43px;
+    overflow: hidden;
+    position: absolute;
+    right: 168px;
+    width: 220px;
+}
+
+input, textarea
+{
+  background: ivory;
+  border: 1px solid black;
+  border-radius: 2px 2px 2px 2px;
+  padding: 5px;
+}
+
+input:focus, textarea:focus {
+    background: white;
+    border: 1px solid #059BFE;;
+    box-shadow: 0 0 4px rgba(30,144,255,0.7);
+    color: black;
+}
+
+
+input[type="radio"] {
+    margin: 8px;
+    width:71px !important;
+}
+
+label {
+    font-family: georgia;
+}
+
+input.dinero {
+    width: 75px !important;
+    text-align: right;
+}
+
+/*dos en linea 70% aprox del documento*/
+.frow2 {
+    display: inline-block;
+    margin: 20px 25px 0px 10px;
+    width: 300px;
+}
+
+.frow3 {
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    display: inline-block;
+}
+
+.frow4 {
+    display: inline-block;
+    margin: 20px 15px 0px 10px;
+    width: 196px;
+}
+
+.frow5, .frow5 select {
+    display: inline-block;
+    width: 100px;
+}
+
+.frow4 select {
+    width: 100%;
+}
+
+.frow2 input, .frow4 input{
+    width: 100%;
+}
+
+.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-size: 12px;
+    float: left;
+    font-style: italic;
+}
+
+
+.error{
+  color: red;
+  font-size:12px;
+}
+
+/***** FIN Formularios ******/
+
+#banner {
+    border-bottom: 1px solid red;
+}
+
+.clear, cleartopup
+{
+  clear: both;
+  display: block;
+}
+
+.cleartopup{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+#content
+{
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.5);
+  margin: 10px auto;
+  padding: 5px 20px;
+  width: 900px;
+}
+
+div.logo {
+    text-align: center;
+    width: 560px;
+}
+
+div.logo h1 {
+    font-family: Exo,'DejaVu Sans';
+    margin: 0;
+    text-shadow: 2px 2px 0px #e1e1e1;
+    font-size: 2em;
+}
+
+div.logo h3 {
+    font-family: tangerine;
+    margin: 0px;
+    color: brown;
+}
+
+
+.left {
+    float: left;
+}
+
+.hide{
+  display: none;
+}
+
+.logo {
+    display: inline-block;
+    padding: 5px;
+    vertical-align: middle;
+}
+/*******************************/
+/* Estilos del Menu Horizontal */
+/*******************************/
+#men_hor ul {
+    display: block;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#men_hor ul a {
+    color: white;
+    text-decoration: none;
+}
+
+#men_hor ul a li:hover {
+    background: orange;
+}
+
+#men_hor ul li {
+    background: none repeat scroll 0 0 red;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0px -2px 0px rgba(0,0,0,0.3);
+    color: white;
+    display: inline;
+    font-family: Exo, 'DejaVu Sans';
+    font-weight: bold;
+    padding: 5px 30px 3px 30px;
+    text-shadow: 0 1px black;
+}
+
+.right {
+    float: right;
+}
+
+/**************************************/
+/*  Footer */
+/*************************************/
+.copy {
+    background: none repeat scroll 0 0 red;
+    border-radius: 0 0 6px 6px ;
+    box-shadow: 0px 4px rgba(0,0,0,.3);
+    color: white;
+    padding: 5px;
+    text-shadow: 1px 1px gray;
+}
+
+footer
+{
+    border-top: 1px solid red;
+    margin-bottom: 10px;
+}
+
+ul.men_footer li {
+    margin: 0px 50px;
+    text-align: center;
+}
+
+/*************** Tabla buscador *************/
+
+input[type="submit"]:hover {
+    background: red;
+}
+
+table.tbusc {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 4px;
+}
+table.tbusc td {
+    border: 1px solid grey;
+    cursor: default;
+    margin: 0;
+    padding: 5px;
+}
+
+table.tbusc thead {
+    background: none repeat scroll 0 0 silver;
+    border: 1px solid grey;
+}
+
+table.tbusc tr:hover {
+    background: Khaki;
+}
+
+input.inp_bus{
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+  padding: 7px;
+  width: 363px;
+}
+
+/* Botones */
+.btn_bus{
+  background: dodgerBlue;
+  border-radius: 3px;
+  border: 1px solid grey;
+  color: white;
+  display: inline-block;
+  padding: 6px;
+  width: 60px;
+}
+
+.btn_bus:hover, .btns:hover, .btns3:hover{
+  background: red;
+}
+
+/* Boton chico */
+
+.btns, .btns2 {
+    border-radius: 3px;
+    box-shadow: 2px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+    padding: 5px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.btns2{
+  background: gold;
+  color: black;
+  text-shadow: 1px 1px rgba(255,255,255,.6);
+}
+
+.btns{
+  background: dodgerblue;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,.6);
+}
+/*********************************************/
+.odd {
+    background: #F5F5F5;
+}
+/* =============================================================================
+   Style Table Plana
+   ========================================================================== */
+.t_plana tr {
+    border-bottom: 1px solid #eaeaea;
+}
+.t_plana td, .t_plana thead {
+    border: none;
+}
+
+.btns3 {
+    background: dodgerblue;
+    padding: 3px 19px;
+    margin: 0px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+/*texto aliniado a la derecha*/
+.t_right{
+    text-align: right;
+}
+
+
+/* =============================================================================
+   Style Dashboard
+   ========================================================================== */
+
+.dashboard a {
+    background: #FBFBFB;
+    background: -moz-linear-gradient(top, #FBFBFB 0%, #F4F4F4 100%);
+    background: -ms-linear-gradient(top, #FBFBFB 0%, #F4F4F4 100%);
+    background: -o-linear-gradient(top, #FBFBFB 0%, #F4F4F4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FBFBFB), color-stop(100%, #F4F4F4));
+    background: -webkit-linear-gradient(top, #FBFBFB 0%, #F4F4F4 100%);
+    background: linear-gradient(top, #FBFBFB 0%, #F4F4F4 100%);
+    border-radius: 9px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+    color: black;
+    display: inline-block;
+    height: 100px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+}
+
+.dashboard a:hover {
+    background: #FBFBFB;
+    background: -moz-linear-gradient(top, #DFF3FF 0%, #70C8FF 100%);
+    background: -ms-linear-gradient(top, #DFF3FF 0%, #70C8FF 100%);
+    background: -o-linear-gradient(top, #DFF3FF 0%, #70C8FF 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #DFF3FF), color-stop(100%, #70C8FF));
+    background: -webkit-linear-gradient(top, #DFF3FF 0%, #70C8FF 100%);
+    background: linear-gradient(top, #DFF3FF 0%, #70C8FF 100%);
+}
+.dashboard a img {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+	/* Style adjustments for viewports that meet the condition */
+}
+
+/* =============================================================================
+   Non-Semantic Helper Classes
+   ========================================================================== */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* =============================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

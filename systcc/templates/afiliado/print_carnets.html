@@ -1,0 +1,59 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/print_carnet.css">
+    <title>Impresios de Carnet</title>
+</head>
+<body>
+ {% for carnet in data %} 
+    <div class="corte">
+    <div class="carnet">
+        <div class="frontal left">
+            <div><img src="{{STATIC_URL}}img/logo_stcc_p.png"><span class="title_carnet">SINDICATO DE TRABAJADORES EN CONSTRUCCIÓN CIVIL DEL PERÚ - SAN MARTÍN</span>
+            </div>
+            <div class="r_white">
+            <div class="foto"></div>
+            <div class="fizq">
+                <p><span class="up_field both">Nombres:</span> {{carnet.afiliado.nombres}} </p>
+                <p><span class="up_field both">Apellidos:</span> {{carnet.afiliado.apellidos}} </p>
+                <p><span class="up_field">DNI:</span> {{carnet.afiliado.dni}} </p>
+                <span class="cat"> {{carnet.afiliado.categoria}} </span>
+            </div>
+            <div class="ffooter">
+                  <span class="left">{{ now|date:"Y" }}</span>
+                  <span class="up_field firma"> Firma </span>
+                  <span class="right">A-{{carnet.afiliado.correlativo}}</span>
+            </div>
+            </div>
+        </div>
+        <div class="atraz right">
+            <div>
+                <div class="leyend">
+                    El presente CARNET ÚNICO acredita al portador como afiliado al gremio y lo facilta hacer uso de sus derechos y cumplir con sus deberes.<br/>
+                    Por lo tanto, solicitamos a las autoridades las garantías que franquea la libre sindicalización en cumplimiento a la constitución del Estado.<br/>
+                    Se otorga por acuerdo del XII Congreso Nacional Ordinario de la Federación y es Válido en todo el Territorio Nacional
+                </div>
+                <div class="logo_t"><img src="{{STATIC_URL}}img/peru_m.png"></div>
+            </div>
+            <div class="aizq">
+                <p>Base: {{ base.distrito }}<span class="right">STCC: <strong> {{ base.date_fundacion|date:"d/m/Y" }}</strong></span></p>
+                <p>Vence: <strong> {{vence|date:"d/m/Y"}} </strong> <span class="right"> Local:<strong> {{ base.direccion }} </strong></span> </p>
+                <p>
+
+                 <div class="f_atras">
+                <!-- <img class="img_left_firma" src="{{STATIC_URL}}img/firma_sec_general.png">
+                 <img class="img_rigth_firma" src="{{STATIC_URL}}img/firma_sec_organizacion.png"> -->
+                 <span class="firma2">{{ general.secretaria }}</span>
+                 <span class="derf2">{{ organizacion.secretaria }}</span>
+                </div>
+                <p>
+            </div>
+            <div class="afooter"></div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+
+
+    </div>
+</body>
+</html>

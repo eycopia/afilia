@@ -1,0 +1,12 @@
+{% extends "stcc_red/base.html" %}
+
+{% block content %}
+<div>
+    <h1 id="title_form">Panel de Control {{request.session.dbse}}</h1>
+    <div class="dashboard">
+    <h3 class="sect_form">Acciones Rápidas</h3>
+    <a href="/nuevo-afiliado/"><img src="{{STATIC_URL}}img/worker.png">Nuevo Afiliado</a>
+    <a href="/admin/"><img src="{{STATIC_URL}}img/admin.png">Administrar</a>
+    </div>
+</div>
+{% endblock %}

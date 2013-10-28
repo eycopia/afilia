@@ -1,0 +1,57 @@
+<script src="{{STATIC_URL}}js/jquery-1.7.1.min.js"></script>
+<script src="{{ STATIC_URL }}js/script.js"></script>
+<link rel="stylesheet" href="{{STATIC_URL}}css/search-popup.css">
+<script type="text/javascript">
+$(function(){
+  $('tbody tr:even').addClass('even');
+  $('tbody tr:odd').addClass('odd');
+
+  $('#text_search').focus();
+
+/*Devolvemos datos al formulario que lo llamo */
+  $('.btnAdd').click(function(){
+    opener.document.getElementById("afiliado_id").value=$(this).attr('pk');
+    opener.document.getElementById("nombres").value=$(this).attr('nombres');
+    window.close();    
+  })
+})
+</script>
+<div class="content-search">
+  <form method="get" action='' id="buscador">
+  	{% csrf_token %}
+  	<div id="search_obra">      	   
+              <input id="text_search" class="inp_bus" type="text" name="q" value=""/>
+              <input type="submit" value="Buscar">      	
+  	</div>
+  </form>
+  <span class="clear"></span>
+  <table class="tbusc">
+      <thead>
+              <th class="peq"> Item </th>
+              <th> Nombres </th>
+              <th class="peq"> Sel. </th>
+      </thead>
+      <tbody id="data-search">
+      {% for data in afiliado %}
+          <tr>
+          <td class="peq">{{forloop.counter}}</td>
+          <td>{{data.nombres}} {{data.apellidos}}</td>
+          <td class="btnAdd peq" nombres="{{data.nombres}} {{data.apellidos}}" pk="{{data.id}}">
+         	<img src="{{ STATIC_URL }}img/ok.png" alt="agregar" title="agregar"/></td>
+          </tr>
+      {% endfor %}
+              
+      </tbody>
+  </table>
+  <div class="pagination">
+      <span class="step-links">
+
+          <a href="?page={{ afiliado.previous_page_number }}">&lt;</a>
+          {% for page in afiliado.paginator.page_range %}
+              <a href="?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+          {% endfor %}
+          <a href="?page={{ afiliado.next_page_number }}"> &gt; </a>
+          
+      </span>
+  </div>
+</div>
